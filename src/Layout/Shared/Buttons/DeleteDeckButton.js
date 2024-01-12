@@ -1,23 +1,19 @@
 import React from "react";
-import { deleteCard } from "../../../utils/api";
+import { deleteDeck } from "../../../utils/api";
 
-function DeleteCardButton({ cardId }) {
+function DeleteDeckButton({ deckId }) {
 
     const handleDelete = async (event) => {
         event.preventDefault();
-        await deleteCard(cardId);
+        await deleteDeck(deckId);
         window.location.reload();
-    } 
-
-    return (
-        <button
-            onClick={handleDelete}
-            className="btn btn-danger"
-            style={{ float: 'right', marginRight: '25px'}}
-            >
-            Delete
-        </button>
-    );
+    }
+    return <button
+        className="btn btn-danger"
+        style={{ float: 'right', marginRight: '50px' }}
+        onClick={handleDelete}>
+        Delete
+    </button>
 }
 
-export default DeleteCardButton;
+export default DeleteDeckButton;
